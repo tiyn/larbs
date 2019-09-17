@@ -73,7 +73,6 @@ A,visual-studio-code-bin,is a Microsoft text editor and kind of IDE
 ,docker,is a powerful virtualization tool
 ,intellij-idea-community-edition,is a Java IDE
 ,jdk8-openjdk,is the standard Java Development Kit 8
-A,lastpass-cli-git,is the best client for Lastpass Password manager
 ,light,for adding light for adjustments of screen
 ,lsd,is a better version of ls with included colors and tree command
 ,lynx,is a Terminal web Browser
@@ -100,3 +99,4 @@ A,vivaldi,is a highly customizable browser from the developers of opera
 ,zip,zips zips
 ,os-prober,is a tool for detecting OSes on a drive
 ,neomutt,adding neomutt email TUI
+,lxappearance,for editing of gtk look
