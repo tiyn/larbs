@@ -77,13 +77,11 @@ A,visual-studio-code-bin,is a Microsoft text editor and kind of IDE
 ,lsd,is a better version of ls with included colors and tree command
 ,lynx,is a Terminal web Browser
 ,maxima,is a powerful math utility
-A,mutt-wizard-git,is a simple interface for configuring of neomutt
 A,pfetch-git,is giving some flair to the command line
 ,nm-connection-editor,is a simple way to manage networks
 ,openssh,is adding a way to use ssh
 ,owncloud-client,is a way to get your files from your own server to your computer and keep them synchronized
 ,python-pip,is the best friend of python3
-P,httplib2,"is needed for the caldav version of calcurse "
 ,qt5ct,is a way to fastly change the look of windows
 ,ranger,is the best file manager with vim keybindings out there
 ,rsync,is a way to transfer files
@@ -97,7 +95,6 @@ A,tor-browser,is the most secure browser
 ,xournalpp,"is a programm to use touch writing "
 ,zip,zips zips
 ,os-prober,is a tool for detecting OSes on a drive
-,neomutt,adding neomutt email TUI
 ,lxappearance,for editing of gtk look
 ,keepassxc,for the keepass password manager
 ,thunderbird,"backup mail, calendar and contact program"
