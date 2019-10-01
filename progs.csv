@@ -99,3 +99,4 @@ A,tor-browser,is the most secure browser
 ,keepassxc,for the keepass password manager
 ,thunderbird,"backup mail, calendar and contact program"
 A,vrms-arch,shows the amount of non free software packages installed
+,xf86-input-synaptics,is needed for toggling the touchpad
