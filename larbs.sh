@@ -15,6 +15,7 @@ while getopts ":a:r:b:p:h" o; do case "${o}" in
 esac done
 
 # DEFAULTS:
+[ -z "$dotfilesrepo" ] && dotfilesrepo="https://github.com/tiynger/.dotfiles.git" && repobranch="master"
 [ -z "$dotfilesrepo" ] && dotfilesrepo="https://github.com/tiynger/.dotfiles.git"
 [ -z "$progsfile" ] && progsfile="https://raw.githubusercontent.com/TiynGER/LARBS/master/progs.csv"
 [ -z "$aurhelper" ] && aurhelper="yay"
@@ -198,6 +199,10 @@ manualinstall $aurhelper || error "Failed to install AUR helper."
 # the user has been created and has priviledges to run sudo without a password
 # and all build dependencies are installed.
 installationloop
+
+# Install the dotfiles in the user's home directory
+putgitrepo "$dotfilesrepo" "/home/$name" "$repobranch"
+rm -f "/home/$name/README.md" "/home/$name/LICENSE"
 
 # Install the LARBS Firefox profile in ~/.mozilla/firefox/
 putgitrepo "https://github.com/LukeSmithxyz/mozillarbs.git" "/home/$name/.mozilla/firefox"
