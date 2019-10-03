@@ -213,9 +213,9 @@ putgitrepo "https://github.com/LukeSmithxyz/mozillarbs.git" "/home/$name/.mozill
 serviceinit NetworkManager cronie
 
 sudo systemctl start docker.service
-sudo systemctl enable docker.service
 sudo groupadd docker
 sudo gpasswd -a $USER docker
+sudo systemctl stop docker.service
 
 # Most important command! Get rid of the beep!
 systembeepoff
