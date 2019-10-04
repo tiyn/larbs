@@ -1,13 +1,15 @@
 #!/bin/sh
 # Luke's Auto Rice Boostrapping Script (LARBS)
 # by Luke Smith <luke@lukesmith.xyz>
+# edited by Marten Kante <mail@martenkante.de>
 # License: GNU GPLv3
 
 ### OPTIONS AND VARIABLES ###
 
-while getopts ":a:r:b:p:h" o; do case "${o}" in
+while getopts ":a:r:b:p:h:w" o; do case "${o}" in
 	h) printf "Optional arguments for custom use:\\n  -r: Dotfiles repository (local file or url)\\n  -b: Dotfiles branch (master is assumed otherwise)\\n  -p: Dependencies and programs csv (local file or url)\\n  -a: AUR helper (must have pacman-like syntax)\\n  -h: Show this message\\n" && exit ;;
 	r) dotfilesrepo=${OPTARG} && git ls-remote "$dotfilesrepo" || exit ;;
+	w) wallrepo=${OPTARG} && git ls-remote "$wallrepo" || exit ;;
 	b) repobranch=${OPTARG} ;;
 	p) progsfile=${OPTARG} ;;
 	a) aurhelper=${OPTARG} ;;
@@ -16,7 +18,7 @@ esac done
 
 # DEFAULTS:
 [ -z "$dotfilesrepo" ] && dotfilesrepo="https://github.com/tiynger/.dotfiles.git" && repobranch="master"
-[ -z "$dotfilesrepo" ] && dotfilesrepo="https://github.com/tiynger/.dotfiles.git"
+[ -z "$wallrepo" ] && dotfilesrepo="https://github.com/tiynger/wallpaper.git"
 [ -z "$progsfile" ] && progsfile="https://raw.githubusercontent.com/TiynGER/LARBS/master/progs.csv"
 [ -z "$aurhelper" ] && aurhelper="yay"
 [ -z "$repobranch" ] && repobranch="master"
@@ -202,6 +204,9 @@ installationloop
 # Install the dotfiles in the user's home directory
 putgitrepo "$dotfilesrepo" "/home/$name" "$repobranch"
 rm -f "/home/$name/README.md" "/home/$name/LICENSE"
+
+# Get my wallpaper
+putgitrepo "$wallrepo" "/home/$name/.config/"
 
 # Install the LARBS Firefox profile in ~/.mozilla/firefox/
 putgitrepo "https://github.com/LukeSmithxyz/mozillarbs.git" "/home/$name/.mozilla/firefox"
