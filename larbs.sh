@@ -222,6 +222,9 @@ sudo groupadd docker
 sudo gpasswd -a $USER docker
 sudo systemctl stop docker.service
 
+#updating pkgfile packagerepos
+sudo pkgfile -u
+
 # Most important command! Get rid of the beep!
 systembeepoff
 
