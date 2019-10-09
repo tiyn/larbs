@@ -103,3 +103,4 @@ A,redshift-minimal,is a minimal-depenmdecy version of redshift to save your eyes
 ,pkgfile,is a tool for zsh to help with unknown commands.,
 ,ncmpcpp,is a mpd client.,
 A,mopidy-spotify,is a mopidy extension for using spotify.,
+A,mopidy-subidy,is a mopidy extension for using subsonic.,
