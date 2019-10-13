@@ -105,3 +105,4 @@ A,redshift-minimal,is a minimal-depenmdecy version of redshift to save your eyes
 A,mopidy-spotify,is a mopidy extension for using spotify.,
 A,mopidy-subidy,is a mopidy extension for using subsonic.,
 P,pynvim,"is a utility used by vim plugins for autocompletion, etc.",
+P,i3ipc,is a python-library for the i3 window manager.,
