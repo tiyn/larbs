@@ -223,7 +223,7 @@ sudo gpasswd -a $USER docker
 sudo systemctl stop docker.service
 
 #changing default shell
-chsh --shell /bin/sh $USER
+chsh --shell /bin/zsh $USER
 
 #updating pkgfile packagerepos
 sudo pkgfile -u
