@@ -7,7 +7,6 @@
 ,ttf-inconsolata,is the monospace font of LARBS.,
 ,ttf-linux-libertine,provides the sans and serif fonts for LARBS.,
 ,bc,is used for a dropdown calculator.,
-,calcurse,is a lightweight terminal-based calendar.,
 ,xcompmgr,is for transparency and removing screen-tearing.,
 ,xorg-xprop,is a tool for detecting window properties.,
 ,dosfstools,allows your computer to access dos-like filesystems.,
