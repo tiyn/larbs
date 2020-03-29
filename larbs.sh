@@ -205,11 +205,6 @@ installationloop
 # Enable services here.
 serviceinit NetworkManager cronie
 
-sudo systemctl start docker.service
-sudo groupadd docker
-sudo gpasswd -a $USER docker
-sudo systemctl stop docker.service
-
 #changing default shell
 chsh --shell /bin/zsh $USER
 
