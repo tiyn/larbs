@@ -9,7 +9,6 @@
 while getopts ":a:r:b:p:h:w" o; do case "${o}" in
 	h) printf "Optional arguments for custom use:\\n  -r: Dotfiles repository (local file or url)\\n  -b: Dotfiles branch (master is assumed otherwise)\\n  -p: Dependencies and programs csv (local file or url)\\n  -a: AUR helper (must have pacman-like syntax)\\n  -h: Show this message\\n" && exit ;;
 	r) dotfilesrepo=${OPTARG} && git ls-remote "$dotfilesrepo" || exit ;;
-	w) wallrepo=${OPTARG} && git ls-remote "$wallrepo" || exit ;;
 	b) repobranch=${OPTARG} ;;
 	p) progsfile=${OPTARG} ;;
 	a) aurhelper=${OPTARG} ;;
@@ -18,7 +17,6 @@ esac done
 
 # DEFAULTS:
 [ -z "$dotfilesrepo" ] && dotfilesrepo="https://github.com/tiynger/.dotfiles.git" && repobranch="master"
-[ -z "$wallrepo" ] && dotfilesrepo="https://github.com/tiynger/wallpaper.git"
 [ -z "$progsfile" ] && progsfile="https://raw.githubusercontent.com/TiynGER/LARBS/master/progs.csv"
 [ -z "$aurhelper" ] && aurhelper="yay"
 [ -z "$repobranch" ] && repobranch="master"
