@@ -1,4 +1,4 @@
-# Thinkpadspecific
+# Thinkpad
 These are a bunch of useful programs if you own a thinkpad.
 
 | program    | description                                      |
