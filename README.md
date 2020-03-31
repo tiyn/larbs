@@ -31,6 +31,8 @@ All programs including these can be found in the ```progs.csv```.
 curl -LO https://raw.githubusercontent.com/tiynger/larbs/master/larbs.sh
 sh larbs.sh
 ```
+## Hotkeys
+There are a bunch of hotkeys. Please visit my dwm and st patches to see them.
 
 ## Optional
 There are a bunch of programs that i use and think are useful.
