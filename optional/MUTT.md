@@ -10,10 +10,17 @@ which will be able to setup your neomutt acordingly.
 | pass        | encrypts passwords    |
 | mutt-wizard | autoconfigure neomutt |
 
-After this you will be able to:
+## Installation
+After the basic installation you will be able to:
+
 ``` mw add ``` to add mailaccounts
+
 ``` mw ls ``` to list existing ones
+
 ``` mw pass ``` to revise passwords
+
 ``` mw delete ``` to delete accounts
+
 ``` mw purge ``` to delete all accounts and settings
+
 ``` mw cron ``` toggle a cronjob to sync mail
