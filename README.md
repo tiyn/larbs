@@ -36,6 +36,5 @@ There are a bunch of hotkeys. Please visit my dwm and st patches to see them.
 
 ## Optional
 There are a bunch of programs that i use and think are useful.
-They come with a .sh installation script and .md description.
-The .sh files are not actively maintained and are more a general guideline how to get things working.
-Make sure to read the description and check the installation script before using.
+They come with a .md installation and configuration guide.
+
