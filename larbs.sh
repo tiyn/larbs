@@ -203,7 +203,8 @@ installationloop
 [ -f /usr/bin/pulseaudio ] && resetpulse
 
 # Enable services here.
-serviceinit NetworkManager cronie
+#old: serviceinit NetworkManager cronie
+systemctl enable NetworkManager cronie
 
 #changing default shell
 chsh --shell /bin/zsh $USER
