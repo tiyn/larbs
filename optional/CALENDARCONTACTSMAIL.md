@@ -113,6 +113,8 @@ which will be able to setup your neomutt acordingly.
 | msmtp       | sends mail            |
 | pass        | encrypts passwords    |
 | mutt-wizard | autoconfigure neomutt |
+The mutt-wizard AUR package is slightly outdated.
+Try to use the [git version](https://github.com/LukeSmithxyz/mutt-wizard) to get the latest mutt-wizard.
 
 ## Installation and configuration
 After the basic installation you will be able to:
