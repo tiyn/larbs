@@ -200,8 +200,8 @@ manualinstall $aurhelper || error "Failed to install AUR helper."
 installationloop
 
 # install dotfiles as bare repo to easily update
-git clone --bare $dotfilesrepo /home/$USER/.dotfiles
-git --git-dir=/home/$USER/.dotfiles/ --work-tree=/home/$USER checkout -f
+runuser -l $USER -c 'git clone --bare $dotfilesrepo /home/$USER/.dotfiles'
+runuser -l $USER -c 'git --git-dir=/home/$USER/.dotfiles/ --work-tree=/home/$USER checkout -f'
 
 # Pulseaudio, if/when initially installed, often needs a restart to work immediately.
 [ -f /usr/bin/pulseaudio ] && resetpulse
