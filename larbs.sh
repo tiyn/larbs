@@ -203,11 +203,10 @@ installationloop
 [ -f /usr/bin/pulseaudio ] && resetpulse
 
 # Enable services here.
-#old: serviceinit NetworkManager cronie
-systemctl enable NetworkManager cronie
+systemctl enable NetworkManager
 
 #changing default shell
-chsh --shell /bin/zsh $USER
+chsh -s /bin/zsh $USER
 
 #updating pkgfile packagerepos
 sudo pkgfile -u
