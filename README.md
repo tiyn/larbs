@@ -36,5 +36,4 @@ There are a bunch of hotkeys. Please visit my dwm and st patches to see them.
 
 ## Optional
 There are a bunch of programs that i use and think are useful.
-They come with a .md installation and configuration guide.
-
+You can find installation guides to these on my [wiki](https://www.wiki.martenkante.eu/#arch)
