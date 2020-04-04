@@ -22,7 +22,6 @@ G,https://github.com/tiynger/st.git,is my custom build of suckless's terminal em
 ,imagemagick,is a terminal image-manipulator providing some convenient shortcuts and the lockscreen in LARBS.,,
 ,keepassxc,for the keepass password manager.,,
 ,libnotify,allows desktop notifications.,,
-A,libxft-bgra,fix for colored emojis in dwm/st/..,,
 ,light,for adding light for adjustments of screen.,,
 ,lsd,is a better version of ls with included colors and tree command.,,
 ,lxappearance,for editing of gtk look.,,
