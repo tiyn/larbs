@@ -199,9 +199,12 @@ manualinstall $aurhelper || error "Failed to install AUR helper."
 # and all build dependencies are installed.
 installationloop
 
-# install dotfiles as bare repo to easily update
-runuser -l $USER -c 'git clone --bare $dotfilesrepo /home/$USER/.dotfiles'
-runuser -l $USER -c 'git --git-dir=/home/$USER/.dotfiles/ --work-tree=/home/$USER checkout -f'
+dialog --title "LARBS Installation" --infobox "Finally, installing \`libxft-bgra\` to enable color emoji in suckless software without crashes." 5 70
+yes | sudo -u "$name" $aurhelper -S libxft-bgra >/dev/null 2>&1
+
+# Install the dotfiles in the user's home directory
+putgitrepo "$dotfilesrepo" "/home/$name" "$repobranch"
+rm -f "/home/$name/README.md" "/home/$name/LICENSE"
 
 # Pulseaudio, if/when initially installed, often needs a restart to work immediately.
 [ -f /usr/bin/pulseaudio ] && resetpulse
@@ -209,8 +212,8 @@ runuser -l $USER -c 'git --git-dir=/home/$USER/.dotfiles/ --work-tree=/home/$USE
 # Enable services here.
 systemctl enable NetworkManager
 
-#changing default shell
-chsh -s /bin/zsh $USER
+# Make zsh the default shell for the user.
+sed -i "s/^$name:\(.*\):\/bin\/.*/$name:\1:\/bin\/zsh/" /etc/passwd
 
 #updating pkgfile packagerepos
 sudo pkgfile -u
