@@ -151,17 +151,16 @@ finalize(){ \
 installpkg dialog || error "Are you sure you're running this as the root user and have an internet connection?"
 
 # Welcome user and pick dotfiles.
-welcomemsg || error "User exited."
-selectdotfiles || error "User exited."
+welcomemsg || error "User exited from welcome."
 
 # Get and verify username and password.
-getuserandpass || error "User exited."
+getuserandpass || error "User exited from pass."
 
 # Give warning if user already exists.
-usercheck || error "User exited."
+usercheck || error "User exited from check."
 
 # Last chance for user to back out before install.
-preinstallmsg || error "User exited."
+preinstallmsg || error "User exited from preinstall."
 
 ### The rest of the script requires no user input.
 
