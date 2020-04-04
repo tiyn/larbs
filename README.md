@@ -44,3 +44,12 @@ There are a bunch of hotkeys. Please visit my [dwm](https://github.com/tiynger/d
 ## Optional
 There are a bunch of programs that i use and think are useful.
 You can find installation guides to these on my [wiki](https://www.wiki.martenkante.eu/#arch)
+
+## Tests
+This script will be regularly checked for correctness.
+Testing system is a Virtual Machine inside Proxmox or a Lenovo Thinkpad X220.
+Maximum results range from ```+``` over ```o``` to ```-```, the latter being the worst.
+
+| Commit  | Date       | Result | Description         |
+| ------- | ---------- | ------ | ------------------- |
+| 4d6dcd7 | 04.04.2020 | +      | flawlessly wporking |
