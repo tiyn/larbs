@@ -14,19 +14,33 @@ while getopts ":a:r:b:p:h" o; do case "${o}" in
 	*) printf "Invalid option: -%s\\n" "$OPTARG" && exit ;;
 esac done
 
-[ -z "$dotfilesrepo" ] && dotfilesrepo="https://github.com/tiynger/.dotfiles.git"
-[ -z "$progsfile" ] && progsfile="https://raw.githubusercontent.com/tiynger/larbs/master/progs.csv"
+[ -z "$dotfilesrepo" ] && dotfilesrepo="https://github.com/tiynger/voidrice.git"
+[ -z "$progsfile" ] && progsfile="https://raw.githubusercontent.com/LukeSmithxyz/LARBS/master/progs.csv"
 [ -z "$aurhelper" ] && aurhelper="yay"
 [ -z "$repobranch" ] && repobranch="master"
 
 ### FUNCTIONS ###
 
-installpkg(){ pacman --noconfirm --needed -S "$1" >/dev/null 2>&1 ;}
+if type xbps-install >/dev/null 2>&1; then
+	installpkg(){ xbps-install -y "$1" >/dev/null 2>&1 ;}
+	grepseq="\"^[PGV]*,\""
+elif type apt >/dev/null 2>&1; then
+	installpkg(){ apt-get install -y "$1" >/dev/null 2>&1 ;}
+	grepseq="\"^[PGU]*,\""
+else
+	distro="arch"
+	installpkg(){ pacman --noconfirm --needed -S "$1" >/dev/null 2>&1 ;}
+	grepseq="\"^[PGA]*,\""
+fi
 
 error() { clear; printf "ERROR:\\n%s\\n" "$1"; exit;}
 
 welcomemsg() { \
 	dialog --title "Welcome!" --msgbox "Welcome to Luke's Auto-Rice Bootstrapping Script!\\n\\nThis script will automatically install a fully-featured Linux desktop, which I use as my main machine.\\n\\n-Luke" 10 60
+	}
+
+selectdotfiles() { \
+	edition="$(dialog --title "Select LARBS version." --menu "Select which version of LARBS you wish to have as default:" 10 70 2 dwm "The version of LARBS using suckless's dwm." i3 "The classic version of LARBS using i3." custom "If you are supplying commandline options for LARBS." 3>&1 1>&2 2>&3 3>&1)" || error "User exited."
 	}
 
 getuserandpass() { \
@@ -151,16 +165,17 @@ finalize(){ \
 installpkg dialog || error "Are you sure you're running this as the root user and have an internet connection?"
 
 # Welcome user and pick dotfiles.
-welcomemsg || error "User exited from welcome."
+welcomemsg || error "User exited."
+selectdotfiles || error "User exited."
 
 # Get and verify username and password.
-getuserandpass || error "User exited from pass."
+getuserandpass || error "User exited."
 
 # Give warning if user already exists.
-usercheck || error "User exited from check."
+usercheck || error "User exited."
 
 # Last chance for user to back out before install.
-preinstallmsg || error "User exited from preinstall."
+preinstallmsg || error "User exited."
 
 ### The rest of the script requires no user input.
 
@@ -173,22 +188,27 @@ dialog --title "LARBS Installation" --infobox "Installing \`basedevel\` and \`gi
 installpkg curl
 installpkg base-devel
 installpkg git
+installpkg ntp
 
 dialog --title "LARBS Installation" --infobox "Synchronizing system time to ensure successful and secure installation of software..." 4 70
-[ -f /etc/sudoers.pacnew ] && cp /etc/sudoers.pacnew /etc/sudoers # Just in case
+ntp 0.us.pool.ntp.org >/dev/null 2>&1
 
-# Allow user to run sudo without password. Since AUR programs must be installed
-# in a fakeroot environment, this is required for all builds with AUR.
-newperms "%wheel ALL=(ALL) NOPASSWD: ALL"
+[ "$distro" = arch ] && { \
+	[ -f /etc/sudoers.pacnew ] && cp /etc/sudoers.pacnew /etc/sudoers # Just in case
 
-# Make pacman and yay colorful and adds eye candy on the progress bar because why not.
-grep "^Color" /etc/pacman.conf >/dev/null || sed -i "s/^#Color$/Color/" /etc/pacman.conf
-grep "ILoveCandy" /etc/pacman.conf >/dev/null || sed -i "/#VerbosePkgLists/a ILoveCandy" /etc/pacman.conf
+	# Allow user to run sudo without password. Since AUR programs must be installed
+	# in a fakeroot environment, this is required for all builds with AUR.
+	newperms "%wheel ALL=(ALL) NOPASSWD: ALL"
 
-# Use all cores for compilation.
-sed -i "s/-j2/-j$(nproc)/;s/^#MAKEFLAGS/MAKEFLAGS/" /etc/makepkg.conf
+	# Make pacman and yay colorful and adds eye candy on the progress bar because why not.
+	grep "^Color" /etc/pacman.conf >/dev/null || sed -i "s/^#Color$/Color/" /etc/pacman.conf
+	grep "ILoveCandy" /etc/pacman.conf >/dev/null || sed -i "/#VerbosePkgLists/a ILoveCandy" /etc/pacman.conf
 
-manualinstall $aurhelper || error "Failed to install AUR helper."
+	# Use all cores for compilation.
+	sed -i "s/-j2/-j$(nproc)/;s/^#MAKEFLAGS/MAKEFLAGS/" /etc/makepkg.conf
+
+	manualinstall $aurhelper || error "Failed to install AUR helper."
+	}
 
 # The command that does all the installing. Reads the progs.csv file and
 # installs each needed program the way required. Be sure to run this only after
@@ -211,6 +231,13 @@ sed -i "s/^$name:\(.*\):\/bin\/.*/$name:\1:\/bin\/zsh/" /etc/passwd
 
 # dbus UUID must be generated for Artix runit.
 dbus-uuidgen > /var/lib/dbus/machine-id
+
+# Block Brave autoupdates just in case. (I don't know if these even exist on Linux, but whatever.)
+grep -q "laptop-updates.brave.com" /etc/hosts || echo "0.0.0.0 laptop-updates.brave.com
+0.0.0.0 go-updater.brave.com" >> /etc/hosts
+
+# Let LARBS know the WM it's supposed to run.
+echo "$edition" > "/home/$name/.local/share/larbs/wm"; chown -R "$name":wheel "/home/$name/.local"
 
 # This line, overwriting the `newperms` command above will allow the user to run
 # serveral important commands, `shutdown`, `reboot`, updating, etc. without a password.
