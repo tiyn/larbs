@@ -28,7 +28,7 @@ All programs including these can be found in the ```progs.csv```.
 
 ## Preparation
 A bootable base installation of Arch Linux is needed.
-You can find a guide on how to get a encrypted Arch Linux with LVM installed on my [website](https://www.wiki.martenkante.eu/#arch/#installation.md).
+You can find a guide on how to get a encrypted Arch Linux with LVM installed in another [repository](https://github.com/tiynger/archinstallation).
 Please only follow the guide until creating a second user.
 You don't need an existing user other than root to use larbs.
 A seperate user will be created during the installation progress.
