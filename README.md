@@ -21,7 +21,7 @@ There is no need to configure users or anything else than internet access and wh
 - Text Editor: ```neovim```
 - Reader: ```zathura```
 - Mail Program: ```thunderbird```
-- Browser: ```firefox```
+- Browser: ```qutebrowser``` /```firefox```
 - Lockscreen: ```slock```
 
 All programs including these can be found in the ```progs.csv```.
