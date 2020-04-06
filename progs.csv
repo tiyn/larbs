@@ -51,6 +51,7 @@ G,https://github.com/tiynger/dwm.git,is my custom build of suckless's window man
 G,https://github.com/tiynger/slock.git,is the screen lock.,,
 ,acpi,is an advanced Configuration and Power Interface.,,
 ,cmatrix,adding the hacker-aura.,,
+,ctags,is adding scan functionality to files opened in vim using tagbar.,,
 ,docx2txt,enables .docx file previews in vifm.,,
 ,firefox,is the browser to rule them all.,,
 A,htop-vim-git,provides system usage information and displays processes.,,
