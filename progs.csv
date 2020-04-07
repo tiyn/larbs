@@ -84,6 +84,7 @@ A,redshift-minimal,is a minimal-depenmdecy version of redshift to save your eyes
 ,sshpass,to securely use your passwords.,,
 ,thunderbird,is a mail calendar and contact program.,,
 ,ttf-ibm-plex,is the font of larbs.,,
+,ttf-jetbrains-mono,is the true font of larbs.,,
 ,ttf-joypixels,is a package that gives the system unicode symbols and emojis used in the status bar and elsewhere.,,
 A,urlscan,parses URLs in the terminal allowing keyboard-based selection.,,
 ,vifm,is the best file manager with vim keybindings out there.,,
