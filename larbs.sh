@@ -14,10 +14,12 @@ while getopts ":a:r:b:p:h" o; do case "${o}" in
 	*) printf "Invalid option: -%s\\n" "$OPTARG" && exit ;;
 esac done
 
-[ -z "$dotfilesrepo" ] && dotfilesrepo="https://github.com/tiynger/.dotfiles.git"
-[ -z "$progsfile" ] && progsfile="https://raw.githubusercontent.com/tiynger/LARBS/master/progs.csv"
+[ -z "$dotfilesrepo" ] && dotfilesrepo="https://github.com/tiyn/.dotfiles.git"
+[ -z "$progsfile" ] && progsfile="https://raw.githubusercontent.com/tiyn/LARBS/master/resources/progs.csv"
 [ -z "$aurhelper" ] && aurhelper="yay"
 [ -z "$repobranch" ] && repobranch="master"
+
+bashhook="https://github.com/tiyn/LARBS/master/resources/bash-update.hook"
 
 ### FUNCTIONS ###
 
@@ -222,6 +224,10 @@ dbus-uuidgen > /var/lib/dbus/machine-id
 
 # Let LARBS know the WM it's supposed to run.
 chown -R "$name":wheel "/home/$name/.local"
+
+# Set dash to /bin/sh
+ln -sfT /bin/dash /bin/sh
+curl $bashhook > /usr/share/libalpm/hooks/bash-update.hook
 
 # This line, overwriting the `newperms` command above will allow the user to run
 # serveral important commands, `shutdown`, `reboot`, updating, etc. without a password.
