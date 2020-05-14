@@ -39,7 +39,7 @@ curl -LO https://raw.githubusercontent.com/tiynger/larbs/master/larbs.sh
 sh larbs.sh
 ```
 ## Hotkeys
-There are a bunch of hotkeys. Please visit my [dwm](https://github.com/tiynger/dwm) and [st](https://github.com/tiynger/st) builds to see them.
+There are a bunch of hotkeys. Please visit my [dwm](https://github.com/tiyn/dwm) and [st](https://github.com/tiyn/st)  builds and my [dotfiles](https://github.com/tiyn/.dotfiles) to see them.
 
 ## Optional
 There are a bunch of programs that i use and think are useful.
