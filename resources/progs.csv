@@ -88,6 +88,7 @@ A,redshift-minimal,is a minimal-depenmdecy version of redshift to save your eyes
 ,rsync,is a way to transfer files.,,,,
 ,rtv,watch reddit from your command line.,,,,
 ,sshpass,to securely use your passwords.,,,,
+A,texlive-latexindent-meta,formats latex nicely.,,,,
 ,thunderbird,is a mail calendar and contact program.,,,,
 ,ttf-joypixels,is a package that gives the system unicode symbols and emojis used in the status bar and elsewhere.,,,,
 A,urlscan,parses URLs in the terminal allowing keyboard-based selection.,,,,
