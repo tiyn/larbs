@@ -57,7 +57,7 @@ G,https://github.com/tiyn/dwmblocks.git,is a script to refresh the dwm statusbar
 ,ctags,is adding scan functionality to files opened in vim using tagbar.,,,,,,
 ,dash,is a lightweight fast POSIX compliant shell.,,,,
 ,docx2txt,enables .docx file previews in vifm.,,,,,,
-A,firefox-esr-bin,is the browser to rule them all.,,,,,,
+A,icecat-bin,is the browser to rule them all.,,,,,,
 A,htop-vim-git,provides system usage information and displays processes.,,,,,,
 ,hub,is a cli for github.,,,,,,
 ,imagemagick,is a terminal image-manipulator providing some convenient shortcuts and the lockscreen in LARBS.,,,,,,
