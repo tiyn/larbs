@@ -19,7 +19,7 @@ esac done
 [ -z "$aurhelper" ] && aurhelper="yay"
 [ -z "$repobranch" ] && repobranch="master"
 
-bashhook="https://github.com/tiyn/LARBS/master/resources/bash-update.hook"
+bashhook="https://raw.githubusercontent.com/tiyn/LARBS/master/resources/bash-update.hook"
 
 ### FUNCTIONS ###
 
