@@ -1,101 +1,101 @@
-#TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right while installing),,,,,,
-,xorg-server,is the graphical server.,,,,,,
-,xorg-xwininfo,allows querying information about windows.,,,,,,
-,xorg-xinit,starts the graphical server.,,,,,,
-,ttf-linux-libertine,provides the sans and serif fonts for LARBS.,,,,,,
-,bc,is used for a dropdown calculator.,,,,,,
-,xcompmgr,is for transparency and removing screen-tearing.,,,,,,
-,xorg-xprop,is a tool for detecting window properties.,,,,,,
-,dosfstools,allows your computer to access dos-like filesystems.,,,,,,
-,libnotify,allows desktop notifications.,,,,,,
-,dunst,is a suckless notification system.,,,,,,
-,exfat-utils,allows management of FAT drives.,,,,,,
-,sxiv,is a minimalist image viewer.,,,,,,
-,xwallpaper,sets the wallpaper.,,,,,,
-,ffmpeg,can record and splice video and audio on the command line.,,,,,,
-,gnome-keyring,serves as the system keyring.,,,,,,
-A,gtk-theme-arc-gruvbox-git,gives the dark GTK theme used in LARBS.,,,,,,
-,neovim,is better than vim.,,,,,,
-,mpd,is a lightweight music daemon.,,,,,,
-,mpv,is the patrician's choice video player.,,,,,,
-,ncmpcpp,is a mpd client.,,,,,,
-,newsboat,is a terminal RSS client.,,,,,,
-,ntfs-3g,allows accessing NTFS partitions.,,,,,,
-,sxhkd,is the hotkey daemon.,,,,,,
-,maim,can take quick screenshots at your request.,,,,,,
-,socat,is a socket utility.,,,,,,
-,tmux,is a terminal multiplexer and the dropdown window in LARBS.,,,,,,
-,unclutter,hides an inactive mouse.,,,,,,
-,unrar,extracts rar's.,,,,,,
-,unzip,unzips zips.,,,,,,
-,lynx,is a Terminal web Browser.,,,,,,
-,xcape,gives the special escape/super mappings of LARBS.,,,,,,
-,xclip,allows for copying and pasting from the command line.,,,,,,
-,xdotool,provides window action utilities on the command line.,,,,,,
-,xorg-xdpyinfo,aids with resolution determination and screen recording.,,,,,,
-,youtube-dl,can download any YouTube video (or playlist or channel) when given the link.,,,,,,
-,zathura,is a pdf viewer with vim-like bindings.,,,,,,
-,zathura-pdf-mupdf,allows mupdf pdf compatibility in zathura.,,,,,,
-,poppler,manipulates .pdfs and gives .pdf previews and other .pdf functions.,,,,,,
-,mediainfo,shows audio and video information and is used by vifm as well.,,,,,,
-,atool,manages and gives information about archives.,,,,,,
-,fzf,is a fuzzy finder tool.,,,,,,
-,highlight,can highlight code output.,,,,,,
-,xorg-xbacklight,enables changing screen brightness levels.,,,,,,
-,zsh-syntax-highlighting,for fish like shell highlighting in the shell,,,,,,
-A,task-spooler,queues commands or files for download.,,,,,,
-A,simple-mtpfs,enables the mounting of cell phones.,,,,,,
-G,https://github.com/tiyn/dmenu.git,runs commands and provides a UI for selection.,,,,,,
-G,https://github.com/tiyn/st.git,is my custom build of suckless's terminal emulator.,,,,,,
-G,https://github.com/tiyn/dwm.git,is my custom build of suckless's window manager.,,,,,,
-G,https://github.com/tiyn/slock.git,is the screen lock.,,,,,,
-G,https://github.com/tiyn/dwmblocks.git,is a script to refresh the dwm statusbar,,,,,,
-,acpi,is an advanced Configuration and Power Interface.,,,,,,
-,astyle,is a formatter for c c# java and more.,,,,
-,autopep8,is a tool for python formatting,,,,,,
-,cmatrix,adding the hacker-aura.,,,,,,
-,ctags,is adding scan functionality to files opened in vim using tagbar.,,,,,,
-,dash,is a lightweight fast POSIX compliant shell.,,,,
-,docx2txt,enables .docx file previews in vifm.,,,,,,
-A,icecat-bin,is the browser to rule them all.,,,,,,
-A,htop-vim-git,provides system usage information and displays processes.,,,,,,
-,hub,is a cli for github.,,,,,,
-,imagemagick,is a terminal image-manipulator providing some convenient shortcuts and the lockscreen in LARBS.,,,,,,
-,keepassxc,for the keepass password manager.,,,,,,
-,light,for adding light for adjustments of screen.,,,,,,
-,lsd,is a better version of ls with included colors and tree command.,,,,,,
-,lxappearance,for editing of gtk look.,,,,,,
-,maxima,is a powerful math utility.,,,,,,
-A,nerd-fonts-complete,is a bunch of fonts.,,,,,,
-,networkmanager,does exactly what it sounds like.,,,,,,
-,nm-connection-editor,is a simple way to manage networks.,,,,,,
-,odt2txt,enables .odt file previews in vifm.,,,,,,
-,openssh,is adding a way to use ssh.,,,,,,
-,os-prober,is a tool for detecting OSes on a drive.,,,,,,
-,owncloud-client,is a way to get your files from your own server to your computer and keep them synchronized.,,,,,,
-A,pfetch-git,is giving some flair to the command .,,,,,,
-,pkgfile,is a tool for zsh to help with unknown commands.,,,,,,
-,pulseaudio,is the audio system (>inb4 bloat).,,,,,,
-,pulseaudio-alsa,is an audio interface with ALSA.,,,,,,
-,pulsemixer,is an intuitive ncurses audio controller.,,,,,,
-A,python2-pynvim,is a utility used by vim plugins for autocompletion etc.,,,,,,
-,python-pip,is the best friend of python3.,,,,,,
-A,python-ueberzug,generates image previews in vifm and other terminal programs.,,,,,,
-,qt5ct,is a way to fastly change the look of windows.,,,,,,
-,qutebrowser,is a lightweight browser with vim bindings.,,,,,,
-A,redshift-minimal,is a minimal-depenmdecy version of redshift to save your eyesfrom deadly blue lasers.,,,,,,
-,rsync,is a way to transfer files.,,,,,,
-,rtv,watch reddit from your command line.,,,,,,
-,sshpass,to securely use your passwords.,,,,,,
-A,texlive-latexindent-meta,formats latex nicely.,,,,,,
-,ttf-joypixels,is a package that gives the system unicode symbols and emojis used in the status bar and elsewhere.,,,,,,
-A,urlscan,parses URLs in the terminal allowing keyboard-based selection.,,,,,,
-,vifm,is the best file manager with vim keybindings out there.,,,,,,
-,xf86-input-synaptics,is needed for toggling the touchpad.,,,,,,
-,xsel,is for copying and pasting in the terminal.,,,,,,
-A,vim-youcompleteme-git,is a totally bloated autocompletion engine working pretty much out of the box with most filetypes.,,,,,,
-,w3m,is a terminal browser which can also view images.,,,,,,
-,zathura-djvu,gives zathura the ability to read .djvu files.,,,,,,
-,zip,zips zips.,,,,,,
-,zsh,is a bash alternative.,,,,,,
-,zsh-autosuggestions,for fish like autosuggestions with zsh,,,,,,
+#TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right while installing)
+,xorg-server,is the graphical server.
+,xorg-xwininfo,allows querying information about windows.
+,xorg-xinit,starts the graphical server.
+,ttf-linux-libertine,provides the sans and serif fonts for LARBS.
+,bc,is used for a dropdown calculator.
+,xcompmgr,is for transparency and removing screen-tearing.
+,xorg-xprop,is a tool for detecting window properties.
+,dosfstools,allows your computer to access dos-like filesystems.
+,libnotify,allows desktop notifications.
+,dunst,is a suckless notification system.
+,exfat-utils,allows management of FAT drives.
+,sxiv,is a minimalist image viewer.
+,xwallpaper,sets the wallpaper.
+,ffmpeg,can record and splice video and audio on the command line.
+,gnome-keyring,serves as the system keyring.
+A,gtk-theme-arc-gruvbox-git,gives the dark GTK theme used in LARBS.
+,neovim,is better than vim.
+,mpd,is a lightweight music daemon.
+,mpv,is the patrician's choice video player.
+,ncmpcpp,is a mpd client.
+,newsboat,is a terminal RSS client.
+,ntfs-3g,allows accessing NTFS partitions.
+,sxhkd,is the hotkey daemon.
+,maim,can take quick screenshots at your request.
+,socat,is a socket utility.
+,tmux,is a terminal multiplexer and the dropdown window in LARBS.
+,unclutter,hides an inactive mouse.
+,unrar,extracts rar's.
+,unzip,unzips zips.
+,lynx,is a Terminal web Browser.
+,xcape,gives the special escape/super mappings of LARBS.
+,xclip,allows for copying and pasting from the command line.
+,xdotool,provides window action utilities on the command line.
+,xorg-xdpyinfo,aids with resolution determination and screen recording.
+,youtube-dl,can download any YouTube video (or playlist or channel) when given the link.
+,zathura,is a pdf viewer with vim-like bindings.
+,zathura-pdf-mupdf,allows mupdf pdf compatibility in zathura.
+,poppler,manipulates .pdfs and gives .pdf previews and other .pdf functions.
+,mediainfo,shows audio and video information and is used by vifm as well.
+,atool,manages and gives information about archives.
+,fzf,is a fuzzy finder tool.
+,highlight,can highlight code output.
+,xorg-xbacklight,enables changing screen brightness levels.
+,zsh-syntax-highlighting,for fish like shell highlighting in the shell
+A,task-spooler,queues commands or files for download.
+A,simple-mtpfs,enables the mounting of cell phones.
+A,dmenu-tiyn-git,runs commands and provides a UI for selection.
+A,st-tiyn-git,is my custom build of suckless's terminal emulator.
+G,https://github.com/tiyn/dwm.git,is my custom build of suckless's window manager.
+G,https://github.com/tiyn/slock.git,is the screen lock.
+G,https://github.com/tiyn/dwmblocks.git,is a script to refresh the dwm statusbar
+,acpi,is an advanced Configuration and Power Interface.
+,astyle,is a formatter for c c# java and mor
+,autopep8,is a tool for python formatting
+,cmatrix,adding the hacker-aura.
+,ctags,is adding scan functionality to files opened in vim using tagbar.
+,dash,is a lightweight fast POSIX compliant shel
+,docx2txt,enables .docx file previews in vifm.
+A,icecat-bin,is the browser to rule them all.
+A,htop-vim-git,provides system usage information and displays processes.
+,hub,is a cli for github.
+,imagemagick,is a terminal image-manipulator providing some convenient shortcuts and the lockscreen in LARBS.
+,keepassxc,for the keepass password manager.
+,light,for adding light for adjustments of screen.
+,lsd,is a better version of ls with included colors and tree command.
+,lxappearance,for editing of gtk look.
+,maxima,is a powerful math utility.
+A,nerd-fonts-complete,is a bunch of fonts.
+,networkmanager,does exactly what it sounds like.
+,nm-connection-editor,is a simple way to manage networks.
+,odt2txt,enables .odt file previews in vifm.
+,openssh,is adding a way to use ssh.
+,os-prober,is a tool for detecting OSes on a drive.
+,owncloud-client,is a way to get your files from your own server to your computer and keep them synchronized.
+A,pfetch-git,is giving some flair to the command .
+,pkgfile,is a tool for zsh to help with unknown commands.
+,pulseaudio,is the audio system (>inb4 bloat).
+,pulseaudio-alsa,is an audio interface with ALSA.
+,pulsemixer,is an intuitive ncurses audio controller.
+A,python2-pynvim,is a utility used by vim plugins for autocompletion etc.
+,python-pip,is the best friend of python3.
+A,python-ueberzug,generates image previews in vifm and other terminal programs.
+,qt5ct,is a way to fastly change the look of windows.
+,qutebrowser,is a lightweight browser with vim bindings.
+A,redshift-minimal,is a minimal-depenmdecy version of redshift to save your eyesfrom deadly blue lasers.
+,rsync,is a way to transfer files.
+,rtv,watch reddit from your command line.
+,sshpass,to securely use your passwords.
+A,texlive-latexindent-meta,formats latex nicely.
+,ttf-joypixels,is a package that gives the system unicode symbols and emojis used in the status bar and elsewhere.
+A,urlscan,parses URLs in the terminal allowing keyboard-based selection.
+,vifm,is the best file manager with vim keybindings out there.
+,xf86-input-synaptics,is needed for toggling the touchpad.
+,xsel,is for copying and pasting in the terminal.
+A,vim-youcompleteme-git,is a totally bloated autocompletion engine working pretty much out of the box with most filetypes.
+,w3m,is a terminal browser which can also view images.
+,zathura-djvu,gives zathura the ability to read .djvu files.
+,zip,zips zips.
+,zsh,is a bash alternative.
+,zsh-autosuggestions,for fish like autosuggestions with zsh
