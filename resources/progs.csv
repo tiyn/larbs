@@ -57,6 +57,7 @@ G,https://github.com/tiyn/dwmblocks.git,is a script to refresh the dwm statusbar
 ,dash,is a lightweight fast POSIX compliant shel
 ,docx2txt,enables .docx file previews in vifm.
 A,icecat-bin,is the browser to rule them all.
+A,firefox-esr-bin,is the alternative browser of mine.
 A,htop-vim-git,provides system usage information and displays processes.
 ,hub,is a cli for github.
 ,imagemagick,is a terminal image-manipulator providing some convenient shortcuts and the lockscreen in LARBS.
