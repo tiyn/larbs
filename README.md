@@ -51,4 +51,4 @@ Maximum results range from ```+``` over ```o``` to ```-```, the latter being the
 
 | Commit  | Date       | Result | Description         |
 | ------- | ---------- | ------ | ------------------- |
-| 4d6dcd7 | 04.04.2020 | +      | flawlessly wporking |
+| 4d6dcd7 | 04.04.2020 | +      | flawlessly working |
