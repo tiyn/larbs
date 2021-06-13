@@ -210,9 +210,6 @@ rm -rf "/home/$name/.git"
 # Restart pulseaudio to make it work
 [ -f /usr/bin/pulseaudio ] && resetpulse
 
-# Setup NetworkManager
-systemctl enable NetworkManager
-
 # Most important command! Get rid of the beep!
 systembeepoff
 
