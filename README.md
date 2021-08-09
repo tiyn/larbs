@@ -59,3 +59,4 @@ Maximum results range from `+` over `o` to `-`, the latter being the worst.
 | 0456974 | 31.12.2020 | +      | Proxmox VM               |
 | d32191b | 12.06.2021 | +      | Lenovo X220              |
 | 6dfcaba | 13.06.2021 | +      | Ryzen 3900x and GTX 1080 |
+| 594ff41 | 09.08.2021 | +      | Acer Switch A12          |
