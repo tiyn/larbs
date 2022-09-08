@@ -51,7 +51,7 @@ This script will be checked for correctness on important changes.
 Testing system is a Virtual Machine inside Proxmox or a Lenovo Thinkpad X220
 occasionally other systems are used (they all use my described guide for a
 basic installation).
-Maximum results range from `+` over `o` to `-`, the latter being the worst.
+Results range from `+` over `o` to `-`, the latter being the worst.
 
 | Commit  | Date       | Result | Description              |
 | ------- | ---------- | ------ | ------------------------ |
