@@ -47,7 +47,7 @@ sh larbs.sh
 
 ## Tests
 
-This script will be regularly checked for correctness.
+This script will be checked for correctness on important changes.
 Testing system is a Virtual Machine inside Proxmox or a Lenovo Thinkpad X220
 occasionally other systems are used (they all use my described guide for a
 basic installation).
