@@ -202,7 +202,7 @@ systemctl --user --now enable pipewire pipewire-pulse
 
 # Most important command! Get rid of the beep!
 rmmod pcspkr
-echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf ;}
+echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
 
 # Make zsh the default shell for the user.
 sed -i "s/^$name:\(.*\):\/bin\/.*/$name:\1:\/bin\/zsh/" /etc/passwd
