@@ -70,10 +70,6 @@ refreshkeys() { \
 	pacman --noconfirm -Sy archlinux-keyring >/dev/null 2>&1
 	}
 
-newperms() { # Set special sudoers settings for install (or after).
-	sed -i "/#LARBS/d" /etc/sudoers
-	echo "$* #LARBS" >> /etc/sudoers ;}
-
 manualinstall() { # Installs $1 manually if not installed. Used only for AUR helper here.
 	[ -f "/usr/bin/$1" ] || (
 	dialog --infobox "Installing \"$1\", an AUR helper..." 4 50
@@ -137,10 +133,6 @@ putgitrepo() { # Downloads a gitrepo $1 and places the files in $2 only overwrit
 	sudo -u "$name" cp -rfT "$dir" "$2"
 	}
 
-systembeepoff() { dialog --infobox "Getting rid of that retarded error beep sound..." 10 50
-	rmmod pcspkr
-	echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf ;}
-
 finalize(){ \
 	dialog --infobox "Preparing welcome message..." 4 50
 	echo "exec_always --no-startup-id notify-send -i ~/.local/share/larbs/larbs.png 'Welcome to LARBS:' 'Press Super+F1 for the manual.' -t 10000"  >> "/home/$name/.config/i3/config"
@@ -168,10 +160,8 @@ preinstallmsg || error "User exited."
 
 ### The rest of the script requires no user input.
 
-adduserandpass || error "Error adding username and/or password."
-
 # Refresh Arch keyrings.
-# refreshkeys || error "Error automatically refreshing Arch keyring. Consider doing so manually."
+ refreshkeys || error "Error automatically refreshing Arch keyring. Consider doing so manually."
 
 dialog --title "LARBS Installation" --infobox "Installing \`basedevel\` and \`git\` for installing other software required for the installation of other programs." 5 70
 installpkg curl
@@ -182,7 +172,8 @@ installpkg git
 
 # Allow user to run sudo without password. Since AUR programs must be installed
 # in a fakeroot environment, this is required for all builds with AUR.
-newperms "%wheel ALL=(ALL) NOPASSWD: ALL"
+trap 'rm -f /etc/sudoers.d/larbs-temp' HUP INT QUIT TERM PWR EXIT
+echo "%wheel ALL=(ALL) NOPASSWD: ALL" >/etc/sudoers.d/larbs-temp
 
 # Make pacman and yay colorful and adds eye candy on the progress bar because why not.
 grep "^Color" /etc/pacman.conf >/dev/null || sed -i "s/^#Color$/Color/" /etc/pacman.conf
@@ -199,19 +190,19 @@ manualinstall $aurhelper || error "Failed to install AUR helper."
 # and all build dependencies are installed.
 installationloop
 
-dialog --title "LARBS Installation" --infobox "Finally, installing \`libxft-bgra\` to enable color emoji in suckless software without crashes." 5 70
-yes | sudo -u "$name" $aurhelper -S libxft-bgra >/dev/null 2>&1
-
 # Install the dotfiles in the user's home directory
 putgitrepo "$dotfilesrepo" "/home/$name" "$repobranch"
 rm -f "/home/$name/README.md" "/home/$name/LICENSE" "/home/$name/.gitignore"
-rm -rf "/home/$name/.git"
 
-# Restart pulseaudio to make it work
-[ -f /usr/bin/pulseaudio ] && resetpulse
+# Install vim plugins if not alread present.
+[ ! -f "/home/$name/.config/nvim/autoload/plug.vim" ] && vimplugininstall
+
+# Make pipewire work
+systemctl --user --now enable pipewire pipewire-pulse
 
 # Most important command! Get rid of the beep!
-systembeepoff
+rmmod pcspkr
+echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf ;}
 
 # Make zsh the default shell for the user.
 sed -i "s/^$name:\(.*\):\/bin\/.*/$name:\1:\/bin\/zsh/" /etc/passwd
@@ -226,10 +217,11 @@ chown -R "$name":wheel "/home/$name/.local"
 ln -sfT /bin/dash /bin/sh
 curl $bashhook > /usr/share/libalpm/hooks/bash-update.hook
 
-# This line, overwriting the `newperms` command above will allow the user to run
-# serveral important commands, `shutdown`, `reboot`, updating, etc. without a password.
-newperms "%wheel ALL=(ALL) ALL #LARBS
-%wheel ALL=(ALL) NOPASSWD: /usr/bin/shutdown,/usr/bin/reboot,/usr/bin/systemctl suspend,/usr/bin/wifi-menu,/usr/bin/mount,/usr/bin/umount,/usr/bin/pacman -Syu,/usr/bin/pacman -Syyu,/usr/bin/packer -Syu,/usr/bin/packer -Syyu,/usr/bin/systemctl restart NetworkManager,/usr/bin/rc-service NetworkManager restart,/usr/bin/pacman -Syyu --noconfirm,/usr/bin/loadkeys,/usr/bin/yay,/usr/bin/pacman -Syyuw --noconfirm"
+# Allow wheel users to sudo with password and allow several system commands
+# (like `shutdown` to run without password).
+echo "%wheel ALL=(ALL:ALL) ALL" >/etc/sudoers.d/00-larbs-wheel-can-sudo
+echo "%wheel ALL=(ALL:ALL) NOPASSWD: /usr/bin/shutdown,/usr/bin/reboot,/usr/bin/systemctl suspend,/usr/bin/wifi-menu,/usr/bin/mount,/usr/bin/umount,/usr/bin/pacman -Syu,/usr/bin/pacman -Syyu,/usr/bin/pacman -Syyu --noconfirm,/usr/bin/loadkeys,/usr/bin/pacman -Syyuw --noconfirm,/usr/bin/pacman -S -u -y --config /etc/pacman.conf --,/usr/bin/pacman -S -y -u --config /etc/pacman.conf --" >/etc/sudoers.d/01-larbs-cmds-without-password
+echo "Defaults editor=/usr/bin/nvim" >/etc/sudoers.d/02-larbs-visudo-editor
 
 # Last message! Install complete!
 finalize
