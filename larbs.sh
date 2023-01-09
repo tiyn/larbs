@@ -159,6 +159,7 @@ usercheck || error "User exited."
 preinstallmsg || error "User exited."
 
 ### The rest of the script requires no user input.
+adduserandpass || error "Error adding username and/or password."
 
 # Refresh Arch keyrings.
  refreshkeys || error "Error automatically refreshing Arch keyring. Consider doing so manually."
