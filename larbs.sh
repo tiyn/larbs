@@ -223,6 +223,9 @@ chown -R "$name":wheel "/home/$name/.local"
 ln -sfT /bin/dash /bin/sh
 curl $bashhook > /usr/share/libalpm/hooks/bash-update.hook
 
+# Update pkgfile database for the command not found handler to work with zsh
+pkgfile -u
+
 # Allow wheel users to sudo with password and allow several system commands
 # (like `shutdown` to run without password).
 echo "%wheel ALL=(ALL:ALL) ALL" >/etc/sudoers.d/00-larbs-wheel-can-sudo
