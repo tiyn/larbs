@@ -45,6 +45,14 @@ curl -LO https://raw.githubusercontent.com/tiynger/larbs/master/larbs.sh
 sh larbs.sh
 ```
 
+It is possible that the following commands need to be run before the script is able to retrieve
+packages.
+
+```sh
+pacman-key --populate archlinux
+pacman-key --refresh-keys
+```
+
 ## Tests
 
 This script will be checked for correctness on important changes.
