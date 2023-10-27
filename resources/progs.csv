@@ -1,4 +1,4 @@
-#TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right while installing)
+#TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right while installing),,
 ,xorg-server,is the graphical server.,,
 ,xorg-xwininfo,allows querying information about windows.,,
 ,xorg-xinit,starts the graphical server.,,
@@ -61,8 +61,8 @@ A,adobe-source-han-mono-kr-fonts,is a mono font for korean.,,
 ,ctags,is adding scan functionality to files opened in vim using tagbar.,,
 ,dash,is a lightweight fast POSIX compliant shell.,,
 ,docx2txt,enables .docx file previews in vifm.,,
-,eza,is a better version of ls with included colors and tree command.
-,ffmpegthumbnailer,generates previews for vifm.
+,eza,is a better version of ls with included colors and tree command.,,
+,ffmpegthumbnailer,generates previews for vifm.,,
 ,firefox,is the preferred browser of mine.,,
 A,htop-vim-git,provides system usage information and displays processes.,,
 ,hub,is a cli for github.,,
