@@ -69,3 +69,4 @@ Results range from `+` over `o` to `-`, the latter being the worst.
 | 6dfcaba | 13.06.2021 | +      | Ryzen 3900x and GTX 1080 |
 | 594ff41 | 09.08.2021 | +      | Acer Switch A12          |
 | 4fa2d6a | 10.01.2023 | +      | Proxmox VM               |
+| 961b6b3 | 27.10.2023 | o      | Intel Evo i7 13th Gen    |
