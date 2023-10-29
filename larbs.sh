@@ -225,7 +225,7 @@ pkgfile -u
 # Allow wheel users to sudo with password and allow several system commands
 # (like `shutdown` to run without password).
 echo "%wheel ALL=(ALL:ALL) ALL" >/etc/sudoers.d/00-larbs-wheel-can-sudo
-echo "%wheel ALL=(ALL:ALL) NOPASSWD: /usr/bin/shutdown,/usr/bin/poweroff,/usr/bin/reboot,/usr/bin/systemctl suspend,/usr/bin/mount,/usr/bin/umount,/usr/bin/pacman -Qi,/usr/bin/pacman -Qq,/usr/bin/pacman -Qqe,/usr/bin/pacman -Rns,/usr/bin/pacman -S,/usr/bin/pacman -Si,/usr/bin/pacman -Slq,/usr/bin/pacman -Sy,/usr/bin/pacman -Syu,/usr/bin/loadkeys" >/etc/sudoers.d/01-larbs-cmds-without-password
+echo "%wheel ALL=(ALL:ALL) NOPASSWD: /usr/bin/shutdown,/usr/bin/poweroff,/usr/bin/reboot,/usr/bin/systemctl suspend,/usr/bin/mount,/usr/bin/umount,/usr/bin/pacman -Qi,/usr/bin/pacman -Qq,/usr/bin/pacman -Qqe,/usr/bin/pacman -Rns,/usr/bin/pacman -S,/usr/bin/pacman -Si,/usr/bin/pacman -Slq,/usr/bin/pacman -Sy,/usr/bin/pacman -Syu,/usr/bin/loadkeys,/usr/bin/systemctl restart NetworkManager" >/etc/sudoers.d/01-larbs-cmds-without-password
 echo "Defaults editor=/usr/bin/nvim" >/etc/sudoers.d/02-larbs-visudo-editor
 
 # Last message! Install complete!
