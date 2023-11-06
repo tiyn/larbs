@@ -193,11 +193,11 @@ manualinstall $aurhelper || error "Failed to install AUR helper."
 installationloop
 
 # Install the dotfiles in the user's home directory
-putgitrepo "$dotfilesrepo" "/home/$name" "$repobranch"
-rm -f "/home/$name/README.md" "/home/$name/LICENSE" "/home/$name/.gitignore"
-
-# Install vim plugins if not alread present.
-[ ! -f "/home/$name/.config/nvim/autoload/plug.vim" ] && vimplugininstall
+git clone --bare "$dotfilesrepo" "/home/$name/.dotfiles"
+git --git-dir="/home/$name/.dotfiles/" --work-tree="/home/$name" checkout
+git --git-dir="/home/$name/.dotfiles/" --work-tree="/home/$name" config --local status.showUntrackedFiles no
+git --git-dir="/home/$name/.dotfiles/" --work-tree="/home/$name" pull
+rm -f "/home/$name/README.md" "/home/$name/LICENSE" "/home/$name/.gitignore" "/home/$name/vim-example.png"
 
 # Make pipewire work
 systemctl --user --now enable pipewire pipewire-pulse
