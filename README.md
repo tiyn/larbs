@@ -11,6 +11,7 @@ The following are some of the main programs that are installed by using this ins
 
 - Operating System: `Arch Linux`
 - Window Manager: `dwm`
+- Audio Server: `pipewire`
 - Shell: `zsh`
 - Terminal Emulator: `st`
 - File Manager: `vifm`
