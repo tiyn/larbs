@@ -7,7 +7,7 @@ In contrast to Lukes Script this one installs dwm and not i3 because it sucks le
 
 ## Essentials
 
-To get this script working you need a base installation of arch.
+The following are some of the main programs that are installed by using this install script.
 
 - Operating System: `Arch Linux`
 - Window Manager: `dwm`
@@ -28,11 +28,12 @@ All programs including these can be found in the `progs.csv`.
 
 There are a bunch of hotkeys. Please visit my
 [dwm](https://github.com/tiyn/dwm) and [st](https://github.com/tiyn/st)
-builds and my [dotfiles](https://github.com/tiyn/.dotfiles) to see them.
+builds and my [dotfiles](https://github.com/tiyn/dotfiles) to see them.
 
 ## Preparation
 
-A bootable base installation of Arch Linux is needed.
+
+To get this script working you need a bootable base installation of Arch Linux.
 You can do a minimal install by following a
 [secure guide by me](https://github.com/Tiyn/wiki/blob/master/wiki/linux/arch-linux/installation.md).
 You don't need an existing user other than root to use larbs.
