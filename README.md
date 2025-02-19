@@ -55,13 +55,20 @@ pacman-key --populate archlinux
 pacman-key --refresh-keys
 ```
 
+It is possible that the screen won't be detected at first.
+To fix this install the needed drivers for the graphics card.
+For AMD this is `mesa` and `xf86-video-amdgpu`.
+
 ## Tests
 
 This script will be checked for correctness on important changes.
 Testing system is a Virtual Machine inside Proxmox or a Lenovo Thinkpad X220
 occasionally other systems are used (they all use my described guide for a
 basic installation).
-Results range from `+` over `o` to `-`, the latter being the worst.
+Results range from `+` over `o` to `-`.
+`+` means the script ran without problems.
+`o` means that minor changes were made to the machine and/or the script after running it.
+`-` means that the script did not work at all.
 
 | Commit  | Date       | Result | Description              |
 | ------- | ---------- | ------ | ------------------------ |
@@ -72,3 +79,4 @@ Results range from `+` over `o` to `-`, the latter being the worst.
 | 594ff41 | 09.08.2021 | +      | Acer Switch A12          |
 | 4fa2d6a | 10.01.2023 | +      | Proxmox VM               |
 | 961b6b3 | 27.10.2023 | o      | Intel Evo i7 13th Gen    |
+| f638c7e | 19.02.2025 | o      | Lenovo E14 AMD Version   |
