@@ -5,34 +5,16 @@ I made some changes which can be found mainly in the progs.csv.
 This also installs all needed dotfiles from my .dotfiles repository.
 In contrast to Lukes Script this one installs dwm and not i3 because it sucks less.
 
-## Essentials
+## Default Programs and Hotkeys 
 
-The following are some of the main programs that are installed by using this install script.
-
-- Operating System: `Arch Linux`
-- Window Manager: `dwm`
-- Audio Server: `pipewire`
-- Shell: `zsh`
-- Terminal Emulator: `st`
-- File Manager: `vifm`
-- Application Launcher: `dmenu(_run)`
-- Status Bar: `dwmblocks`
-- Notification Service: `dunst`
-- Text Editor: `neovim`
-- Reader: `zathura`
-- Browser: `firefox`
-- Lockscreen: `slock`
-
-All programs including these can be found in the `progs.csv`.
-
-## Hotkeys
+The default programs that are used by LARBS can be found in my
+[dotfiles](https://github.com/tiyn/dotfiles).
 
 There are a bunch of hotkeys. Please visit my
 [dwm](https://github.com/tiyn/dwm) and [st](https://github.com/tiyn/st)
 builds and my [dotfiles](https://github.com/tiyn/dotfiles) to see them.
 
 ## Preparation
-
 
 To get this script working you need a bootable base installation of Arch Linux.
 You can do a minimal install by following a
