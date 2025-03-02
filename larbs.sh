@@ -202,6 +202,9 @@ rm -f "/home/$name/README.md" "/home/$name/LICENSE" "/home/$name/.gitignore" "/h
 # Make pipewire work
 systemctl --user --now enable pipewire pipewire-pulse
 
+# Enable resolvconf
+systemctl --user --now enable systemd-resolved.service
+
 # Most important command! Get rid of the beep!
 rmmod pcspkr
 echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
