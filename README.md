@@ -80,3 +80,4 @@ Results range from `+` over `o` to `-`.
 | 4fa2d6a | 10.01.2023 | +      | Proxmox VM               |
 | 961b6b3 | 27.10.2023 | o      | Intel Evo i7 13th Gen    |
 | f638c7e | 19.02.2025 | o      | Lenovo E14 AMD Version   |
+| 41e6adb | 02.03.2025 | +      | Acer Switch A12          |
