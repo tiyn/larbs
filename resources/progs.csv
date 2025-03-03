@@ -141,3 +141,4 @@ A,python-jupytext,is a tool to convert jupyter notebooks to markdown which is us
 ,speedtest-cli,is a tool to test the internet speed without using the browser.,,
 ,aria2,makes downloading faster.,,
 A,scc,gets stats for a code repository.,,
+,xss-lock,manages the lock screen.,,
