@@ -165,6 +165,8 @@ installpkg curl
 installpkg base-devel
 installpkg git
 installpkg ntp
+npm install -g neovim
+gem install neovim
 
 dialog --title "LARBS Installation" \
 	--infobox "Synchronizing system time to ensure successful and secure installation of software..." 8 70
