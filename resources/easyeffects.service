@@ -1,0 +1,11 @@
+[Unit]
+Description=EasyEffects (GApplication Service)
+After=pipewire.service wireplumber.service
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/easyeffects --gapplication-service
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target

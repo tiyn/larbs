@@ -16,6 +16,7 @@ esac done
 [ -z "$repobranch" ] && repobranch="master"
 
 bashhook="https://raw.githubusercontent.com/tiyn/LARBS/master/resources/bash-update.hook"
+easyeffectsservice="https://raw.githubusercontent.com/tiyn/LARBS/master/resources/easyeffects.service"
 
 ### FUNCTIONS ###
 
@@ -223,6 +224,11 @@ chown -R "$name":wheel "/home/$name/.local"
 # Set dash to /bin/sh
 ln -sfT /bin/dash /bin/sh
 curl $bashhook > /usr/share/libalpm/hooks/bash-update.hook
+
+# Set easyeffects to start at boot
+curl $easyeffectsservice > /home/$name/.config/systemd/user/easyeffects.service
+systemctl --user daemon-reload
+systemctl --user enable easyeffects.service
 
 # Update pkgfile database for the command not found handler to work with zsh
 pkgfile -u
